@@ -46,7 +46,7 @@ make -j4
 
 Now copy `klipper.uf2` to the RP2040-Zero board:
 * Connect RP2040-Zero via USB to your printer host
-* Press BOOT and RST, releast RST first then BOOT 1sec later
+* Press BOOT and RST, release RST first then BOOT 1sec later
 * A new mass storage device named RPI-RP2 should appear
 
 ```sh
