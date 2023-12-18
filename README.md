@@ -60,6 +60,11 @@ ls -alh /dev/serial/by-id/usb-Klipper_rp2040*
 # lrwxrwxrwx 1 root root 13 Dec 18 15:53 /dev/serial/by-id/usb-Klipper_rp2040_E66130100F5E3838-if00 -> ../../ttyACM1
 ```
 
+#### Troubleshooting
+
+* Problem: After flashing the board works fine, but after disconnecting/reconnecting the board it does not boot anymore.
+* Solution: Run `make menuconfig` and select `Flash chip (GENERIC_03H with CLKDIV 4)`. See [this issue](https://github.com/raspberrypi/pico-sdk/issues/1304).
+
 ## Configuration example
 
 Your specific configuration depends on what is connected to the gpio pins. Example of a minimal configuration:
