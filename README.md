@@ -41,21 +41,11 @@ make menuconfig
 #      USB ids  --->
 #  ()  GPIO pins to set at micro-controller startup
 make -j4
+#   (...lots of output...)
 #   Creating uf2 file out/klipper.uf2
-```
-
-Now copy `klipper.uf2` to the RP2040-Zero board:
-* Connect RP2040-Zero via USB to your printer host
-* Press BOOT and RST, release RST first then BOOT 1sec later
-* A new mass storage device named RPI-RP2 should appear
-
-```sh
-sudo fdisk -l | grep RP2 -B1
-# Disk /dev/sda: 128 MiB, 134217728 bytes, 262144 sectors
-# Disk model: RP2
-mkdir mnt
-sudo mount /dev/sda1 ./mnt
-sudo cp out/klipper.uf2 ./mnt/
+ls -alh /dev/serial/by-id/usb-*
+# lrwxrwxrwx 1 root root 13 Dec 18 15:53 /dev/serial/by-id/usb-RPI_rp2040_E66130100F5E3838-if00 -> ../../ttyACM1
+make flash FLASH_DEVICE=/dev/serial/by-id/usb-RPI_rp2040_E66130100F798838-if00
 ls -alh /dev/serial/by-id/usb-Klipper_rp2040*
 # lrwxrwxrwx 1 root root 13 Dec 18 15:53 /dev/serial/by-id/usb-Klipper_rp2040_E66130100F5E3838-if00 -> ../../ttyACM1
 ```
