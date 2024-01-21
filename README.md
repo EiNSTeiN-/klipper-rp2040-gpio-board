@@ -45,7 +45,7 @@ make -j4
 #   Creating uf2 file out/klipper.uf2
 ls -alh /dev/serial/by-id/usb-*
 # lrwxrwxrwx 1 root root 13 Dec 18 15:53 /dev/serial/by-id/usb-RPI_rp2040_E66130100F5E3838-if00 -> ../../ttyACM1
-make flash FLASH_DEVICE=/dev/serial/by-id/usb-RPI_rp2040_E66130100F798838-if00
+make flash FLASH_DEVICE=/dev/serial/by-id/usb-RPI_rp2040_E66130100F5E3838-if00
 ls -alh /dev/serial/by-id/usb-Klipper_rp2040*
 # lrwxrwxrwx 1 root root 13 Dec 18 15:53 /dev/serial/by-id/usb-Klipper_rp2040_E66130100F5E3838-if00 -> ../../ttyACM1
 ```
